@@ -1,0 +1,11 @@
+<p>Ту ду лист</p>
+<input [(ngModel)]="value" type="text" placeholder="Напишите что-нибудь" />
+<button (click)="addElem()">Добавить запись</button>
+<ul *ngFor="let elem of todoListService.elems">
+    <li >
+        <todo-elem [todoValue]="elem"> </todo-elem>
+        <p>{{elem.value}}</p>
+        <button>Изменить статус записи</button>
+        <button>Удалить</button>
+    </li>
+</ul>
