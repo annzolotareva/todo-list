@@ -9,4 +9,5 @@ import { CommonModule } from '@angular/common';
     declarations: [ListComponent],
     providers: [],
 })
+
 export class ListModule { }
