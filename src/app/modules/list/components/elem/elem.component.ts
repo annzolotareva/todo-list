@@ -1,6 +1,6 @@
 import { style } from '@angular/animations';
-import { Component, Input, OnInit } from '@angular/core';
-import { IElem } from '../services/todo-list-service/todo-list.service';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { AddFormComponent } from "../add-form/add-form/add-form.component";
 
 @Component({
     selector: 'todo-elem',
@@ -9,10 +9,8 @@ import { IElem } from '../services/todo-list-service/todo-list.service';
 })
 
 export class ElemComponent implements OnInit {
-    @Input()
-    newTodo!: IElem;
 
-    constructor() { }
+    constructor(public addFormComponent: AddFormComponent) { }
 
 
     ngOnInit() { }

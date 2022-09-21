@@ -1,1 +1,7 @@
-<p>add-form works!</p>
+<input [(ngModel)]="newValue" type="text" placeholder="Напишите что-нибудь" />
+<select>
+    <option selected value={{status = 'Обычная'}}>Обычная</option>
+    <option value={{status = 'Важная'}}>Важная</option>
+    <option value={{status = 'Выполненная'}}>Выполненная</option>>
+</select>
+<button>Добавить запись</button>

@@ -1,6 +1,6 @@
 <ul *ngFor="let elem of todoListService.elems">
     <li >
-        <todo-elem [newTodo]="elem", (delete)="todoListService.delete($event)",> </todo-elem>
+        <!-- <todo-elem [newTodo]="elem", (delete)="todoListService.delete($event)",> </todo-elem> -->
     </li>
 </ul>
-<todo-add-form  (addElem)="todoListService.addElem($event)"></todo-add-form>
+
