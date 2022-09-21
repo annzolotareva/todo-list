@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { ignoreElements } from 'rxjs';
 
 const enum ElemStatuses {
   common = 'Common',
@@ -18,6 +19,7 @@ export interface IElem {
   providedIn: 'root'
 })
 export class TodoListService {
+  
   elems: Array<IElem> = [ {
     id: 1,
     value: "Первая запись",
@@ -42,15 +44,14 @@ export class TodoListService {
   }
 
   delete(id: number): void{
-    console.log(this.elems);
+    this.elems = this.elems.filter(user => user.id !== id);
   }
 
-  addElem(): void{
-    //TodoListService.
-  }
+   addElem(elem: IElem): void {
+    this.elems.unshift(elem);
+   }
 
-  editStatus(): void{
-
+  editStatus(status: string): void{
   }
 
 }

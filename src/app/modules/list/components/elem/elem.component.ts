@@ -1,5 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
+import { IElem } from '../services/todo-list-service/todo-list.service';
 
 @Component({
     selector: 'todo-elem',
@@ -9,9 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class ElemComponent implements OnInit {
     @Input()
-    todoValue!: string;
-    
-  
+    newTodo!: IElem;
 
     constructor() { }
 

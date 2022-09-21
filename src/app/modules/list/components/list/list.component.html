@@ -1,0 +1,9 @@
+<p>Ту ду лист</p>
+<input [(ngModel)]="newValue" type="text" placeholder="Напишите что-нибудь" />
+<button (click)="todoListService.addElem(newItem)">Добавить запись</button>
+<ul *ngFor="let elem of todoListService.elems">
+    <li >
+        <todo-elem [newTodo]="elem"> </todo-elem>
+        <button (click)="todoListService.delete(elem.id)">Удалить запись</button>
+    </li>
+</ul>

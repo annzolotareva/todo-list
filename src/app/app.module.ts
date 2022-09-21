@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'; 
 import { ListModule } from "./modules/list/list.module";
 import { CommonModule } from '@angular/common';
+import { AddFormComponent } from './add-form/add-form/add-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AddFormComponent,
   ],
   imports: [
     BrowserModule,
