@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoListService, IElem } from '../../services/todo-list-service/todo-list.service';
+import { ElemComponent } from "../elem/elem.component";
 
 @Component({
     selector: 'todo-list',
@@ -8,12 +9,11 @@ import { TodoListService, IElem } from '../../services/todo-list-service/todo-li
 
 export class ListComponent implements OnInit {
     
-    todoValue: string = '';
-    newValue: string = '';
-    newItem: IElem = {id: 100, value: this.newValue, status: 'ok'};
 
-    constructor(public todoListService: TodoListService ) { 
+    constructor(public todoListService: TodoListService) {
+
     }
+
 
 
     ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IElem } from '../../services/todo-list-service/todo-list.service';
 
 @Component({
@@ -7,11 +7,13 @@ import { IElem } from '../../services/todo-list-service/todo-list.service';
   styleUrls: ['./add-form.component.scss']
 })
 export class AddFormComponent implements OnInit {
-  @Input()
-    newTodo!: IElem;
+  newValue!: string;
+  status!: string;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+

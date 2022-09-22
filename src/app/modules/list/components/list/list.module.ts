@@ -3,7 +3,7 @@ import { ListComponent } from './list.component';
 import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
 import { ElemComponent } from '../elem/elem.component';
-import { AddFormComponent } from '../add-form/add-form/add-form.component';
+import { AddFormComponent } from '../add-form/add-form.component';
 
 @NgModule({
     imports: [FormsModule, CommonModule],
