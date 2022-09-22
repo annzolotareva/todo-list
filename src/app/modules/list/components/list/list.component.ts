@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TodoListService, IElem } from '../../services/todo-list-service/todo-list.service';
 import { ElemComponent } from "../elem/elem.component";
 
@@ -7,11 +7,13 @@ import { ElemComponent } from "../elem/elem.component";
     templateUrl: 'list.component.html'
 })
 
+
 export class ListComponent implements OnInit {
-    
+    nId: number = 0;
+
 
     constructor(public todoListService: TodoListService) {
-
+        
     }
 
 

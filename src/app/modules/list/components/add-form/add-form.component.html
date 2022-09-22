@@ -1,7 +1,7 @@
-<input [(ngModel)]="newValue" type="text" placeholder="Напишите что-нибудь" />
-<select>
-    <option selected value={{status = 'Обычная'}}>Обычная</option>
-    <option value={{status = 'Важная'}}>Важная</option>
-    <option value={{status = 'Выполненная'}}>Выполненная</option>>
+<input [(ngModel)]="newElem.value" type="text" placeholder="Напишите что-нибудь" />
+<select [(ngModel)]="newElem.status">
+    <option value='Обычная'>Обычная</option>
+    <option value='Важная'>Важная</option>
+    <option value='Выполненная'>Выполненная</option>>
 </select>
-<button>Добавить запись</button>
+<button (click)="addElem.emit(newElem)">Добавить запись</button>

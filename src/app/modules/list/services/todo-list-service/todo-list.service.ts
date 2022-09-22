@@ -3,9 +3,9 @@ import { ignoreElements } from 'rxjs';
 import { ListComponent } from "../../components/list/list.component";
 
 const enum ElemStatuses {
-  common = 'Common',
-  important = 'Important',
-  completed = 'Completed'
+  common = 'Обычная',
+  important = 'Важная',
+  completed = 'Выполненная'
 }
 
 const arrOfElemStatuses = [ElemStatuses.common, ElemStatuses.important, ElemStatuses.completed];
@@ -41,7 +41,7 @@ export class TodoListService {
 {
   id: 4,
   value: "Четвёртая запись",
-  status: arrOfElemStatuses[3]
+  status: arrOfElemStatuses[2]
 }
 ]
   constructor() { 

@@ -7,7 +7,7 @@ import { AddFormComponent } from '../add-form/add-form.component';
 
 @NgModule({
     imports: [FormsModule, CommonModule],
-    exports: [ListComponent],
+    exports: [ListComponent, AddFormComponent],
     declarations: [ListComponent,
     ElemComponent, AddFormComponent],
     providers: [],

@@ -1,8 +1,7 @@
-<p>{{newTodo.value}}</p>
-<!--
-<select>
-    <option selected value={{todoStatus}}>Обычная</option>
-    <option value={{todoStatus}}>Важная</option>
-    <option value={{todoStatus}}>Выполненная</option>>
+<p>{{elem.value}}</p>
+<select [(ngModel)]="elem.status">
+    <option value='Обычная'>Обычная</option>
+    <option value='Важная'>Важная</option>
+    <option value='Выполненная'>Выполненная</option>>
 </select>
--->
+<button (click)="deleteElem.emit(elem.id)">Удалить запись</button>

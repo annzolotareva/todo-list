@@ -1,5 +1,7 @@
 import { style } from '@angular/animations';
-import { Component, Input, OnInit, EventEmitter } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { TodoListService, IElem } from '../../services/todo-list-service/todo-list.service';
+
 @Component({
     selector: 'todo-elem',
     templateUrl: 'elem.component.html',
@@ -7,14 +9,16 @@ import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 })
 export class ElemComponent implements OnInit {
     @Input()
-    newValue!: string;
+    elem!: IElem;
     status!: string;
-    valueOfTask: string = this.newValue;
-    valueOfStatus: string = this.status;
+    @Output()
+    public deleteElem = new EventEmitter<number>();
     // if (valueOfStatus = ...)
     constructor(
       ) {}
 
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log(this.elem);
+    }
 }
