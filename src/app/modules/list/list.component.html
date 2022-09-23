@@ -3,4 +3,5 @@
         <todo-elem [elem]="elem" (deleteElem)="todoListService.delete($event)"> </todo-elem>
     </li>
 </ul>
+<app-add-form (addElem)="todoListService.addElem($event)"> </app-add-form>
    

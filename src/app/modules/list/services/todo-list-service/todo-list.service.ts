@@ -54,6 +54,7 @@ export class TodoListService {
 
    addElem(elem: IElem): void {
     this.elems.unshift(elem);
+    console.log(this.elems)
    }
 
   editStatus(status: string): void{

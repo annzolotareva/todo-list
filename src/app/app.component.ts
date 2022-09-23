@@ -6,6 +6,8 @@ import { TodoListService } from "../app/modules/list/services/todo-list-service/
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(public todoListService: TodoListService) {
+  }
   title = 'todo-list';
 
   check(event: any) {
