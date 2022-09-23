@@ -13,7 +13,6 @@ export class ListComponent implements OnInit {
 
 
     constructor(public todoListService: TodoListService) {
-        
     }
 
 
