@@ -1,6 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
-import { TodoListService, IElem } from '../../services/todo-list-service/todo-list.service';
+import { IElem } from '../../services/todo-list-service/todo-list.service';
 
 @Component({
     selector: 'todo-elem',
@@ -13,7 +13,6 @@ export class ElemComponent implements OnInit {
     status!: string;
     @Output()
     public deleteElem = new EventEmitter<number>();
-    // if (valueOfStatus = ...)
     constructor(
       ) {}
 

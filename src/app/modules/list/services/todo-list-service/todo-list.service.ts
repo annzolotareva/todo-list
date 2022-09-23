@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ignoreElements } from 'rxjs';
-import { ListComponent } from "../../components/list/list.component";
+import { ListComponent } from "../../list.component";
 
 const enum ElemStatuses {
   common = 'Обычная',

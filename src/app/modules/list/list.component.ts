@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { TodoListService, IElem } from '../../services/todo-list-service/todo-list.service';
-import { ElemComponent } from "../elem/elem.component";
+import { TodoListService, IElem } from '../list/services/todo-list-service/todo-list.service';
+import { ElemComponent } from "../list/components/elem/elem.component";
+import { AddFormComponent } from "../list/components/add-form/add-form.component";
 
 @Component({
     selector: 'todo-list',
@@ -9,7 +10,6 @@ import { ElemComponent } from "../elem/elem.component";
 
 
 export class ListComponent implements OnInit {
-    nId: number = 0;
 
 
     constructor(public todoListService: TodoListService) {

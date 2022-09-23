@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { ElemComponent } from "../elem/elem.component";
 import { IElem } from '../../services/todo-list-service/todo-list.service';
 
 @Component({
@@ -8,11 +9,12 @@ import { IElem } from '../../services/todo-list-service/todo-list.service';
 })
 export class AddFormComponent implements OnInit {
   newValue!: string;
-  status!: string;
-  newElem: IElem = {id: 1000, value: '', status: 'Обычная'}
-  // if (value статуса = )
+  newStatus!: string;
+
+  @Input()
+    newElem: IElem = {id: 1000, value: '', status: 'Обычная'};
   @Output()
-  public addElem = new EventEmitter();
+    public addElem = new EventEmitter<IElem>();
 
   constructor() { }
 
