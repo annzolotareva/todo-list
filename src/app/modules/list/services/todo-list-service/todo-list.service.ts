@@ -22,7 +22,7 @@ export interface IElem {
 })
 export class TodoListService {
 
-  currentStatus!: string;
+
   
   elems: Array<IElem> = [ {
     id: 1,
