@@ -22,7 +22,6 @@ export interface IElem {
 })
 export class TodoListService {
 
-
   
   elems: Array<IElem> = [ {
     id: 1,
@@ -49,7 +48,7 @@ export class TodoListService {
 
 
   delete(id: number): void{
-    this.elems = this.elems.filter(user => user.id !== id);
+    this.elems = this.elems.filter(elem => elem.id !== id);
   }
 
    addElem(elem: IElem): void {
