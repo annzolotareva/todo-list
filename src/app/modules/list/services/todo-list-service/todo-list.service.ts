@@ -2,15 +2,6 @@ import { Injectable } from '@angular/core';
 import { ignoreElements } from 'rxjs';
 import { ListComponent } from "../../list.component";
 
-const enum ElemStatuses {
-  common = 'Обычная',
-  important = 'Важная',
-  completed = 'Выполненная'
-}
-
-const arrOfElemStatuses = [ElemStatuses.common, ElemStatuses.important, ElemStatuses.completed];
-
-
 export interface IElem {
   id: number;
   value: string;
@@ -22,42 +13,43 @@ export interface IElem {
 })
 export class TodoListService {
 
+  found: boolean = false;
   
-  elems: Array<IElem> = [ {
-    id: 1,
-    value: "Первая запись",
-    status: arrOfElemStatuses[0]
-},
-{   id:2,
-    value: "Вторая запись",
-    status: arrOfElemStatuses[1]
-},
-{   
-    id: 3,
-    value: "Третья запись",
-    status: arrOfElemStatuses[0]
-},
-{
-  id: 4,
-  value: "Четвёртая запись",
-  status: arrOfElemStatuses[2]
-}
-]
+  arrId: Array<IElem["id"]> = [];
+
+  elems: Array<IElem> = [ ];
   constructor() { 
   }
-
 
   delete(id: number): void{
     this.elems = this.elems.filter(elem => elem.id !== id);
   }
-
-   addElem(elem: IElem): void {
-    this.elems.unshift(elem);
-    console.log(this.elems)
+  
+  generateId(id: IElem["id"]): void { 
+    while ( this.arrId.length < 10) {
+      id = Math.ceil(Math.random() * 100);
+      if (this.found = true) {
+        this.found = false;
+      }
+      for (let i = 0; i < this.arrId.length; i++){
+        if (this.arrId[i] == id) {
+          this.found = true;
+          break;
+        }
+      } 
+      if (!this.found) {
+        this.arrId[this.arrId.length] = id;
+      }
+    }
+    console.log(id);
    }
 
-  editStatus(status: string): void{
-    
-  }
-
+   addElem(elem: IElem): void {
+    if (elem.value != "") {
+      this.elems.unshift(elem);
+      console.log("первая работает");
+    } else {
+      alert('Вы пытыетесь создать пустую запись!')
+    }
+   }
 }

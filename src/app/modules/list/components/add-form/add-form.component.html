@@ -1,7 +1,9 @@
-<input [(ngModel)]="newValue" type="text" placeholder="Напишите что-нибудь" />
-<select [(ngModel)]="newStatus">
-    <option value='Обычная'>Обычная</option>
-    <option value='Важная'>Важная</option>
-    <option value='Выполненная'>Выполненная</option>>
-</select>
-<button (click)="createElem()">Добавить запись</button>
+<div class="div add-form">
+    <input [(ngModel)]="newValue" type="text" placeholder="Напишите что-нибудь" />
+    <select [(ngModel)]="newStatus">
+        <option value='Обычная'>Обычная</option>
+        <option value='Важная'>Важная</option>
+        <option value='Выполненная'>Выполненная</option>>
+    </select>
+    <button (click)="createElem(); generId()">Добавить запись</button>
+</div>

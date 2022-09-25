@@ -1,7 +1,9 @@
-<p>{{elem.value}}</p>
-<select [(ngModel)]="elem.status">
-    <option value='Обычная'>Обычная</option>
-    <option value='Важная'>Важная</option>
-    <option value='Выполненная'>Выполненная</option>>
-</select>
-<button (click)="deleteElem.emit(elem.id)">Удалить запись</button>
+<div class="elem">
+    <p>{{elem.value}}</p>
+    <select [(ngModel)]="elem.status">
+        <option value='Обычная'>Обычная</option>
+        <option value='Важная'>Важная</option>
+        <option value='Выполненная'>Выполненная</option>>
+    </select>
+    <button (click)="deleteElem.emit(elem.id)">Удалить запись</button>
+</div>
