@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ignoreElements } from 'rxjs';
+import { ignoreElements, Observable } from 'rxjs';
 import { ListComponent } from "../../list.component";
+import { HttpClient } from '@angular/common/http';
 
 export interface IElem {
   id: number;
@@ -12,40 +13,43 @@ export interface IElem {
   providedIn: 'root'
 })
 export class TodoListService {
-
-  found: boolean = false;
   
   arrId: Array<IElem["id"]> = [];
 
   elems: Array<IElem> = [ ];
-  constructor() { 
+  constructor(private http: HttpClient) { 
+  }
+
+  getElems(): Observable<Object>{
+    return this.http.get('http://localhost:4200/src/assets/todo-list.json');
   }
 
   delete(id: number): void{
     this.elems = this.elems.filter(elem => elem.id !== id);
   }
   
-  generateId(id: IElem["id"]): void { 
-    while ( this.arrId.length < 10) {
+  generateId(id: IElem["id"]): void {
+    let found: boolean = true;
+    // debugger
+    while (found) {
       id = Math.ceil(Math.random() * 100);
-      if (this.found = true) {
-        this.found = false;
-      }
-      for (let i = 0; i < this.arrId.length; i++){
-        if (this.arrId[i] == id) {
-          this.found = true;
+      for (let i = 0; i < this.elems.length; i++){
+        if (this.elems[i].id == id) {
+          found = true;
           break;
         }
+        found = false;
       } 
-      if (!this.found) {
-        this.arrId[this.arrId.length] = id;
+      if (!found) {
+        this.elems[0].id = id;
       }
     }
-    console.log(id);
+    console.log("Вторая работает");
    }
 
    addElem(elem: IElem): void {
     if (elem.value != "") {
+      elem.id = this.arrId[this.elems.length];
       this.elems.unshift(elem);
       console.log("первая работает");
     } else {
