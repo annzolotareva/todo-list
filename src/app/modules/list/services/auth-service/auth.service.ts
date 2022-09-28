@@ -4,13 +4,14 @@ import { environment } from 'src/environments/environment';
 import { map, Observable, of } from 'rxjs';
 import { Router, RouteReuseStrategy } from '@angular/router';
 import { ThisReceiver } from '@angular/compiler';
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  baseUrl: string = '/api/auth';
-  constructor(private http: HttpClient, private router: Router) {}
+  baseUrl: string = `${environment.backendOrigin}/auth`;
+
+  constructor(private http: HttpClient, private routes: Router) {}
+
   parseJwt(token: string) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -31,36 +32,29 @@ export class AuthService {
     if (token) {
       const user: any = this.parseJwt(token);
       return user;
-    }
-    return null;
+    } else return null;
   }
+
   public get token(): string | null {
-    const token = localStorage.getItem('del_meetups_auth_token');
-    return token;
+    return localStorage.getItem('del_meetups_auth_token');
   }
-  
+
   login(email: string, password: string) {
     return this.http
-      .post<{ token: string }>(`${this.baseUrl}/login`, {email, password})
+      .post<{ token: string }>(`${this.baseUrl}/login`, { email, password })
       .pipe(
         map((res) => {
-          console.log(res)
           if (res.token) {
             localStorage.setItem('del_meetups_auth_token', res.token);
-            this.router.navigate(['list']);
+            this.routes.navigate(['list']);
           }
           return null;
         })
       );
-      
   }
 
   logout() {
     localStorage.removeItem('del_meetups_auth_token');
-    this.router.navigate(['auth']);
+    this.routes.navigate(['']);
   }
-
 }
-
-
-

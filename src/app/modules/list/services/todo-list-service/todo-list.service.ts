@@ -21,7 +21,7 @@ export class TodoListService {
   }
 
   getElems(): Observable<Object>{
-    return this.http.get('http://localhost:4200/src/assets/todo-list.json');
+    return this.http.get('./src/assets/todo-list.json');
   }
 
   delete(id: number): void{

@@ -1,15 +1,7 @@
 <header>
-    <ul class="navbar">
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>О сервисе</a>
-        </li>
-        <li>
-          <a>Products</a>
-        </li>
-      </ul>
-      
-      <router-outlet> </router-outlet>
+  <nav>
+    <a routerLink="/info">О сервисе</a>
+    <a routerLink="/list">Список задач</a>
+  </nav>
+    <router-outlet> </router-outlet>
 </header>

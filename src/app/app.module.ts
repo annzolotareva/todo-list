@@ -9,7 +9,7 @@ import { AuthPageComponent } from './modules/list/pages/auth-page/auth-page.comp
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InfoComponent } from './modules/list/pages/info/info.component';
 import { NavbarComponent } from './modules/list/components/navbar/navbar.component';
-import { JwtInterceptor } from './modules/list/interseptors/auth.interceptor'
+import { JwtInterceptor } from './modules/list/interseptors/jwt.interceptor'
 
 @NgModule({
   declarations: [

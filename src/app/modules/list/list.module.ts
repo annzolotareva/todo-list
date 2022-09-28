@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { ElemComponent } from '../list/components/elem/elem.component';
 import { AddFormComponent } from '../list/components/add-form/add-form.component';
 
+
+
 @NgModule({
     imports: [FormsModule, CommonModule],
     exports: [ListComponent, AddFormComponent],
